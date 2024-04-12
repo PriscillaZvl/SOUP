@@ -1,4 +1,4 @@
-import Camera from './camera.js';
+// import Camera from './camera.js';
 
 class GameScene extends Phaser.Scene {
 
@@ -29,8 +29,8 @@ class GameScene extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
 
         // Create the camera
-        this.camera = new Camera(this, this.player);
-        this.camera.startFollow()
+        //this.camera = new Camera(this, this.player);
+        //this.camera.startFollow()
     }
 
     // Player movement
