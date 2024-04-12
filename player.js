@@ -1,3 +1,5 @@
+import Camera from './camera.js';
+
 class GameScene extends Phaser.Scene {
 
     constructor() {
@@ -19,11 +21,16 @@ class GameScene extends Phaser.Scene {
 
     // Create player sprite 
     create() {
+        // Create canvas that expands to the entire screen
         this.player = this.add.sprite(window.innerWidth / 2, window.innerHeight / 2, 'player');
         this.player.setInteractive();
 
         // Arrow keys for movement
         this.cursors = this.input.keyboard.createCursorKeys();
+
+        // Create the camera
+        this.camera = new Camera(this, this.player);
+        this.camera.startFollow()
     }
 
     // Player movement
@@ -44,6 +51,8 @@ class GameScene extends Phaser.Scene {
     }
 }
 
+
+// Create game
 window.onload = function () {
     if (typeof Phaser !== "undefined") {
         window.gameScene = new GameScene();
@@ -53,7 +62,7 @@ window.onload = function () {
             width: window.innerWidth,
             height: window.innerHeight,
             scene: [gameScene],
-            backgroundColor: '#5F8575'
+            backgroundColor: '#5F8575' // Green background color
         });
     } else {
         console.log("Phaser is undefined :(");
