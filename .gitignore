@@ -1,6 +1,2 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-.parcel-cache
-.vs
+# Godot 4+ specific ignores
+.godot/
