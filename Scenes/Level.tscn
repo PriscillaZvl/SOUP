@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr8o427y1t6kg"]
 
-[ext_resource type="PackedScene" path="res://Objects/Colliders/box.tscn" id="1_wvl8u"]
+[ext_resource type="PackedScene" uid="uid://bqolxtcp0i02l" path="res://Objects/Colliders/box.tscn" id="1_wvl8u"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="2_u5u8m"]
 
 [node name="Level Scene" type="Node2D"]
@@ -11,4 +11,4 @@ position = Vector2(1240, 306)
 [node name="Box" parent="." instance=ExtResource("1_wvl8u")]
 position = Vector2(1588, 369)
 disable_mode = 1
-mass = 1000.0
+can_sleep = false
