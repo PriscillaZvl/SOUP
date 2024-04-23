@@ -1,48 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://djwvyv1ocqll5"]
+[gd_scene load_steps=12 format=3 uid="uid://djwvyv1ocqll5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerControls.cs" id="1_faxeh"]
-[ext_resource type="Script" path="res://Shaders/FireRepeat.gd" id="2_m1hch"]
+[ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireRepeat.gd" id="2_785te"]
+[ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireScale.gd" id="2_ie4c0"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerStats.cs" id="3_jry8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjs2j"]
 size = Vector2(50, 50)
 
+[sub_resource type="Curve" id="Curve_81a1t"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_74xvi"]
+min_value = -500.0
+max_value = 500.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.963333, 500), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hchan"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.103333, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_tlp30"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.247059, 0.12549, 1)
+
+[sub_resource type="Curve" id="Curve_vctbq"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_0anjf"]
-
-[sub_resource type="Shader" id="Shader_052sn"]
-code = "shader_type particles;
-
-uniform float emission_radius;
-uniform float explosion_strength;
-uniform vec3 start_color;
-uniform vec3 end_color;
-uniform float LIFETIME_MAX;
-
-void process() {
-    // Use TIME to get a random value per particle
-    float random_value = fract(sin(dot(VELOCITY.xy ,vec2(12.9898,78.233))) * 43758.5453);
-    float angle = random_value * 2.0 * PI;
-
-    // Emit the particles in a circular pattern
-    VELOCITY.xy = vec2(cos(angle), sin(angle)) * emission_radius;
-    
-    // Apply an explosive force to scatter the particles
-    VELOCITY += normalize(VELOCITY) * explosion_strength;
-
-    // Interpolate the color from start_color to end_color based on lifetime
-    COLOR = vec4(mix(start_color, end_color, LIFETIME / LIFETIME_MAX), 1.0);
-}
-
-void start() {
-	// Called when a particle is spawned.
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsdra"]
-shader = SubResource("Shader_052sn")
-shader_parameter/emission_radius = 2.0
-shader_parameter/explosion_strength = 2.0
-shader_parameter/start_color = null
-shader_parameter/end_color = null
-shader_parameter/LIFETIME_MAX = 2.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(412, 57)
@@ -64,7 +54,6 @@ grow_vertical = 2
 color = Color(0.12549, 0.176471, 0.662745, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.8, 0.8)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 100.0
@@ -72,26 +61,47 @@ position_smoothing_speed = 100.0
 [node name="Player Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gjs2j")
 
-[node name="Weapons" type="Node2D" parent="."]
+[node name="PlayerWeapons" type="Node2D" parent="."]
 
-[node name="Fire Spell" type="Area2D" parent="Weapons"]
+[node name="Fire Spell" type="Area2D" parent="PlayerWeapons"]
+script = ExtResource("2_ie4c0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapons/Fire Spell"]
-scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_0anjf")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Weapons/Fire Spell"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/Fire Spell"]
+light_mask = 31
+visibility_layer = 31
 emitting = false
 amount = 100
-process_material = SubResource("ShaderMaterial_wsdra")
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
-fixed_fps = 60
-script = ExtResource("2_m1hch")
+randomness = 1.0
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+angular_velocity_curve = SubResource("Curve_81a1t")
+orbit_velocity_curve = SubResource("Curve_74xvi")
+tangential_accel_min = -40.0
+tangential_accel_max = 35.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_hchan")
+color_ramp = SubResource("Gradient_tlp30")
+hue_variation_curve = SubResource("Curve_vctbq")
+script = ExtResource("2_785te")
 
-[node name="Timer" type="Timer" parent="Weapons/Fire Spell/GPUParticles2D"]
+[node name="Timer" type="Timer" parent="PlayerWeapons/Fire Spell/CPUParticles2D"]
 wait_time = 2.0
 autostart = true
 
-[connection signal="timeout" from="Weapons/Fire Spell/GPUParticles2D/Timer" to="Weapons/Fire Spell/GPUParticles2D" method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/Fire Spell"]
+scale = Vector2(12, 12)
+shape = SubResource("CircleShape2D_0anjf")
+
+[node name="PlayerStats" type="Node2D" parent="."]
+script = ExtResource("3_jry8k")

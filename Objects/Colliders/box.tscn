@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqolxtcp0i02l"]
+[gd_scene load_steps=3 format=3 uid="uid://bqolxtcp0i02l"]
+
+[ext_resource type="Script" path="res://Scripts/Collides/TouchTest.gd" id="1_tehdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thmov"]
 size = Vector2(100, 100)
@@ -7,6 +9,7 @@ size = Vector2(100, 100)
 position = Vector2(100, 125)
 disable_mode = 2
 mass = 10.0
+script = ExtResource("1_tehdd")
 
 [node name="TEMP Sprite" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -23,7 +26,7 @@ grow_vertical = 2
 pivot_offset = Vector2(50, 50)
 color = Color(0.180524, 0.364899, 0.285414, 1)
 
-[node name="Box Collision" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 shape = SubResource("RectangleShape2D_thmov")

@@ -1,14 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=4 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="PackedScene" uid="uid://bqolxtcp0i02l" path="res://Objects/Colliders/box.tscn" id="1_wvl8u"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="2_u5u8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
+size = Vector2(50, 50)
 
 [node name="Level Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_u5u8m")]
 position = Vector2(1240, 306)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(468, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_7nq5s")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(25, 25)
+color = Color(0.290927, 0.147216, 0.140679, 1)
+
 [node name="Box" parent="." instance=ExtResource("1_wvl8u")]
 position = Vector2(1588, 369)
-disable_mode = 1
+mass = 1000.0
 can_sleep = false
+freeze_mode = 1
