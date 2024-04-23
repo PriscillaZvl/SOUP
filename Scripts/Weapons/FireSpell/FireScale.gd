@@ -1,5 +1,7 @@
 extends Node2D
 
+# Syncs CPUParticles2D and CollisionShape2D particles and scales into one super easy variable.
+
 var _scale_factor = 1.0
 
 var scale_factor:

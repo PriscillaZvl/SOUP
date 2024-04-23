@@ -16,11 +16,11 @@ func _ready():
 
 # Called every frame
 func _on_area_entered(area):
-	if area.is_in_group("entities"):
+	if area.is_in_group("Entities"):
 		timer.start()
 
 # Deals damage to the entity
 func _on_timer_timeout():
 	for area in get_overlapping_areas():
-		if area.is_in_group("entities"):
+		if area.is_in_group("Entities"):
 			player_stats.DealDamage(area)

@@ -35,7 +35,7 @@ point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0anjf"]
 
-[node name="Player" type="CharacterBody2D" groups=["Entities"]]
+[node name="Player" type="CharacterBody2D" groups=["Player Entity"]]
 position = Vector2(412, 57)
 disable_mode = 2
 script = ExtResource("1_faxeh")

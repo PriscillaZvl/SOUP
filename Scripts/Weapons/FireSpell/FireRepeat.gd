@@ -11,7 +11,7 @@ func _ready():
 		push_error("PlayerStats node not found.")
 		return
 
-	# Get the existing Timer node
+	# Get the Timer node
 	var timer = get_node("Timer")
 	timer.wait_time = attack_speed
 	timer.timeout.connect(_on_timer_timeout)

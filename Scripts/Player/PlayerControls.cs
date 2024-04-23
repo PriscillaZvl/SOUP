@@ -10,7 +10,6 @@ public partial class PlayerControls : Node2D
 		PlayerStats = GetNode<PlayerStats>("PlayerStats");
 	}
 	
-	
 	public override void _Process(double delta)
 	{
 		Vector2 velocity = new Vector2();
