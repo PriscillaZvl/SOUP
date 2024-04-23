@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://djwvyv1ocqll5"]
+[gd_scene load_steps=13 format=3 uid="uid://djwvyv1ocqll5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerControls.cs" id="1_faxeh"]
 [ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireRepeat.gd" id="2_785te"]
 [ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireScale.gd" id="2_ie4c0"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerStats.cs" id="3_jry8k"]
+[ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireDamage.gd" id="4_8h2dc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjs2j"]
 size = Vector2(50, 50)
@@ -34,7 +35,7 @@ point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0anjf"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entities"]]
 position = Vector2(412, 57)
 disable_mode = 2
 script = ExtResource("1_faxeh")
@@ -99,7 +100,10 @@ script = ExtResource("2_785te")
 wait_time = 2.0
 autostart = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/FireSpell"]
+[node name="DamageArea" type="Area2D" parent="PlayerWeapons/FireSpell"]
+script = ExtResource("4_8h2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/FireSpell/DamageArea"]
 scale = Vector2(12, 12)
 shape = SubResource("CircleShape2D_0anjf")
 

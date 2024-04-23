@@ -11,7 +11,7 @@ var scale_factor:
 
 func update_scale():
 	var cpu_particles = get_node("CPUParticles2D")
-	var collision_shape = get_node("CollisionShape2D")
+	var collision_shape = get_node("DamageArea/CollisionShape2D")
 
 	cpu_particles.scale = Vector2(_scale_factor, _scale_factor)
 	cpu_particles.amount = int(100 * _scale_factor)
