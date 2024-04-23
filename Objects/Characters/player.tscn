@@ -63,10 +63,10 @@ shape = SubResource("RectangleShape2D_gjs2j")
 
 [node name="PlayerWeapons" type="Node2D" parent="."]
 
-[node name="Fire Spell" type="Area2D" parent="PlayerWeapons"]
+[node name="FireSpell" type="Area2D" parent="PlayerWeapons"]
 script = ExtResource("2_ie4c0")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/Fire Spell"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/FireSpell"]
 light_mask = 31
 visibility_layer = 31
 emitting = false
@@ -95,11 +95,11 @@ color_ramp = SubResource("Gradient_tlp30")
 hue_variation_curve = SubResource("Curve_vctbq")
 script = ExtResource("2_785te")
 
-[node name="Timer" type="Timer" parent="PlayerWeapons/Fire Spell/CPUParticles2D"]
+[node name="Timer" type="Timer" parent="PlayerWeapons/FireSpell/CPUParticles2D"]
 wait_time = 2.0
 autostart = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/Fire Spell"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/FireSpell"]
 scale = Vector2(12, 12)
 shape = SubResource("CircleShape2D_0anjf")
 

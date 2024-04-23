@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqolxtcp0i02l"]
 
-[ext_resource type="Script" path="res://Scripts/Collides/TouchTest.gd" id="1_tehdd"]
+[ext_resource type="Script" path="res://Scripts/Collides/FireSpellScaleUp.gd" id="1_tehdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thmov"]
 size = Vector2(100, 100)
