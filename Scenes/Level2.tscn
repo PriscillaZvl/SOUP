@@ -425,7 +425,7 @@ position = Vector2(1412, 355)
 position = Vector2(1381, 360)
 
 [node name="Item_Attack_Speed24" parent="." instance=ExtResource("10_dnls3")]
-position = Vector2(1366, 360)
+position = Vector2(1432, 363)
 
 [node name="Item_Attack_Speed6" parent="." instance=ExtResource("10_dnls3")]
 position = Vector2(1294, 394)
@@ -447,6 +447,30 @@ position = Vector2(1236, 373)
 
 [node name="Item_Scale_Up2" parent="." instance=ExtResource("10_j6iqt")]
 position = Vector2(1207, 382)
+
+[node name="Item_Scale_Up7" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1186, 390)
+
+[node name="Item_Scale_Up8" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1134, 380)
+
+[node name="Item_Scale_Up9" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1085, 368)
+
+[node name="Item_Scale_Up10" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1106, 337)
+
+[node name="Item_Scale_Up11" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1086, 405)
+
+[node name="Item_Scale_Up12" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1137, 420)
+
+[node name="Item_Scale_Up13" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1110, 394)
+
+[node name="Item_Scale_Up14" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1055, 382)
 
 [node name="Item_Scale_Up3" parent="." instance=ExtResource("10_j6iqt")]
 position = Vector2(1174, 372)
