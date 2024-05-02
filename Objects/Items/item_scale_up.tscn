@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://3wsgvg4dl1a1"]
+
+[ext_resource type="Script" path="res://Scripts/Items/FireSpellScaleUp.gd" id="1_pvfx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
+size = Vector2(50, 50)
+
+[node name="Item_Scale_Up" type="Area2D"]
+position = Vector2(1197, 358)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_pvfx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7nq5s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+color = Color(0.290927, 0.147216, 0.140679, 1)
+metadata/_edit_use_anchors_ = true

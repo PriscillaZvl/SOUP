@@ -5,9 +5,9 @@ public partial class PlayerStats : Node
 {
 	[Export] public int maxHP = 100;
 	[Export] public int HP { get; private set; }
-	[Export] public int AttackDamage { get; private set; } = 10;
+	[Export] public int AttackDamage { get; private set; } = 5;
 	[Export] public float AttackSpeed { get; private set; } = 2f;
-	[Export] public float MovementSpeed { get; private set; } = 200f;
+	[Export] public float MovementSpeed { get; private set; } = 50f;
 	[Export] public float DodgeChance { get; private set; } = 0.01f;
 	[Export] public float Lifesteal { get; private set; } = 0f;
 

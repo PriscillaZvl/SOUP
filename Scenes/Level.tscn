@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=13 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
-[ext_resource type="Script" path="res://Scripts/Items/FireSpellScaleUp.gd" id="2_0wnst"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="2_u5u8m"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_unte7"]
 [ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_pasr2"]
+[ext_resource type="PackedScene" uid="uid://3wsgvg4dl1a1" path="res://Objects/Items/item_scale_up.tscn" id="5_q3epf"]
 [ext_resource type="PackedScene" uid="uid://d3ev2djd58xci" path="res://Objects/Characters/bomber.tscn" id="6_4848t"]
 [ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_nwo2f"]
 [ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_rvdmb"]
@@ -306,12 +306,10 @@ texture = ExtResource("2_unte7")
 sources/0 = SubResource("TileSetAtlasSource_qat83")
 sources/1 = SubResource("TileSetAtlasSource_box0v")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
-size = Vector2(50, 50)
-
 [node name="Level Scene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 position = Vector2(120, 0)
 tile_set = SubResource("TileSet_1xfnh")
 format = 2
@@ -326,29 +324,7 @@ position = Vector2(1240, 306)
 [node name="Zerger" parent="." groups=["Entities"] instance=ExtResource("4_pasr2")]
 position = Vector2(739, 392)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(468, 380)
-script = ExtResource("2_0wnst")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_7nq5s")
-
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-pivot_offset = Vector2(25, 25)
-color = Color(0.290927, 0.147216, 0.140679, 1)
+[node name="Item_Scale_Up" parent="." instance=ExtResource("5_q3epf")]
 
 [node name="bomber" parent="." instance=ExtResource("6_4848t")]
 position = Vector2(776, 223)
