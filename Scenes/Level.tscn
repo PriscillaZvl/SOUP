@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
 [ext_resource type="Script" path="res://Scripts/Items/FireSpellScaleUp.gd" id="2_0wnst"]
@@ -310,6 +310,24 @@ sources/1 = SubResource("TileSetAtlasSource_box0v")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
 size = Vector2(50, 50)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qosgu"]
+bg_color = Color(0.036982, 0.145885, 0.0368903, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhs3t"]
+bg_color = Color(0.260728, 0.704419, 0.34044, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 3
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
 [node name="Level Scene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -363,3 +381,15 @@ position = Vector2(920, 72)
 
 [node name="Sniper" parent="." instance=ExtResource("9_xgfph")]
 position = Vector2(1411, 134)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 27.0
+offset_top = 14.0
+offset_right = 568.0
+offset_bottom = 57.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qosgu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yhs3t")
+value = 100.0
+show_percentage = false
