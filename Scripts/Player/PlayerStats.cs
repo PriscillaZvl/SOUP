@@ -12,7 +12,7 @@ public partial class PlayerStats : Node
 	[Export] public float DodgeChance { get; private set; } = 0.01f;
 	[Export] public float Lifesteal { get; private set; } = 0f;
 
-	// Declare the signal with the correct EventHandler naming
+	// Declare the signal for WeaponRepeat.gd
 	[Signal]
 	public delegate void AttackSpeedChangedEventHandler(float newSpeed);
 
@@ -36,7 +36,6 @@ public partial class PlayerStats : Node
 		{
 			AttackSpeed = newSpeed;
 			EmitSignal(nameof(AttackSpeedChanged), newSpeed);
-			GD.Print("Attack Speed is now: " + AttackSpeed);
 		}
 	}
 }
