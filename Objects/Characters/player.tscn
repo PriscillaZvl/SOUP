@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://djwvyv1ocqll5"]
+[gd_scene load_steps=16 format=3 uid="uid://djwvyv1ocqll5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerControls.cs" id="1_faxeh"]
-[ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireRepeat.gd" id="2_785te"]
 [ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireScale.gd" id="2_ie4c0"]
+[ext_resource type="Script" path="res://Scripts/Weapons/WeaponRepeat.gd" id="3_hbuck"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerStats.cs" id="3_jry8k"]
 [ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireDamage.gd" id="4_8h2dc"]
 
@@ -25,8 +25,9 @@ point_count = 2
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.06, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_tlp30"]
-colors = PackedColorArray(0, 0.270588, 0.690196, 1, 0.434306, 0.820194, 1, 1)
+[sub_resource type="Gradient" id="Gradient_vxq3i"]
+resource_name = "Fire"
+colors = PackedColorArray(0.8, 0, 0, 1, 0.750802, 0.297036, 0.155057, 1)
 
 [sub_resource type="Curve" id="Curve_vctbq"]
 min_value = -1.0
@@ -40,6 +41,10 @@ min_value = -200.0
 max_value = 200.0
 _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ntn62"]
+resource_name = "Lance"
+colors = PackedColorArray(0, 0.4, 0.796078, 1, 0, 0.623529, 0.592157, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wblgo"]
 size = Vector2(4.16666, 21.5874)
@@ -76,7 +81,6 @@ shape = SubResource("RectangleShape2D_gjs2j")
 [node name="PlayerWeapons" type="Node2D" parent="."]
 
 [node name="FireSpell" type="Area2D" parent="PlayerWeapons"]
-visible = false
 script = ExtResource("2_ie4c0")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/FireSpell"]
@@ -102,9 +106,9 @@ tangential_accel_max = 35.0
 scale_amount_min = 0.5
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_hchan")
-color_ramp = SubResource("Gradient_tlp30")
+color_ramp = SubResource("Gradient_vxq3i")
 hue_variation_curve = SubResource("Curve_vctbq")
-script = ExtResource("2_785te")
+script = ExtResource("3_hbuck")
 
 [node name="Timer" type="Timer" parent="PlayerWeapons/FireSpell/CPUParticles2D"]
 wait_time = 2.0
@@ -123,29 +127,31 @@ script = ExtResource("2_ie4c0")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/Lance"]
 light_mask = 31
 visibility_layer = 31
+emitting = false
 amount = 50
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.25
 emission_shape = 1
 emission_sphere_radius = 32.0
 direction = Vector2(0, -1)
-spread = 10.0
+spread = 5.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 500.0
-initial_velocity_max = 800.0
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
 angular_velocity_max = 100.0
 angular_velocity_curve = SubResource("Curve_pp47x")
 tangential_accel_curve = SubResource("Curve_yue0h")
 damping_min = 300.0
-damping_max = 400.0
+damping_max = 500.0
 scale_amount_min = 0.5
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_hchan")
-color_ramp = SubResource("Gradient_tlp30")
+color_ramp = SubResource("Gradient_ntn62")
 hue_variation_curve = SubResource("Curve_vctbq")
-script = ExtResource("2_785te")
+script = ExtResource("3_hbuck")
 
 [node name="Timer" type="Timer" parent="PlayerWeapons/Lance/CPUParticles2D"]
 wait_time = 2.0
