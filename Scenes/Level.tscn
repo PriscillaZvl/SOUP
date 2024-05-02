@@ -326,6 +326,33 @@ position = Vector2(739, 392)
 
 [node name="Item_Scale_Up" parent="." instance=ExtResource("5_q3epf")]
 
+[node name="Item_Scale_Up2" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1213, 357)
+
+[node name="Item_Scale_Up3" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1201, 371)
+
+[node name="Item_Scale_Up4" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1233, 372)
+
+[node name="Item_Scale_Up5" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1257, 361)
+
+[node name="Item_Scale_Up6" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1254, 377)
+
+[node name="Item_Scale_Up7" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1217, 385)
+
+[node name="Item_Scale_Up8" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1192, 384)
+
+[node name="Item_Scale_Up9" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1184, 370)
+
+[node name="Item_Scale_Up10" parent="." instance=ExtResource("5_q3epf")]
+position = Vector2(1175, 358)
+
 [node name="bomber" parent="." instance=ExtResource("6_4848t")]
 position = Vector2(776, 223)
 

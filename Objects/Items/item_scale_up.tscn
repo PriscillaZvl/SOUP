@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://3wsgvg4dl1a1"]
 
-[ext_resource type="Script" path="res://Scripts/Items/FireSpellScaleUp.gd" id="1_pvfx8"]
+[ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="1_pvfx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
 size = Vector2(50, 50)
