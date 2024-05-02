@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
-[ext_resource type="Script" path="res://Scripts/Items/FireSpellScaleUp.gd" id="2_0wnst"]
+[ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="2_0wnst"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="2_u5u8m"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_unte7"]
 [ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_pasr2"]
