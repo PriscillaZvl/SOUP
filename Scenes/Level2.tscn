@@ -1,18 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=16 format=3 uid="uid://cr8o427y1t6kg"]
 
-[ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
-[ext_resource type="Script" path="res://Scripts/Items/FireSpellScaleUp.gd" id="2_0wnst"]
-[ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="2_u5u8m"]
-[ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_unte7"]
-[ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_pasr2"]
-[ext_resource type="PackedScene" uid="uid://d3ev2djd58xci" path="res://Objects/Characters/bomber.tscn" id="6_4848t"]
-[ext_resource type="Script" path="res://Objects/Characters/bomber.gd" id="7_dppcx"]
-[ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_nwo2f"]
-[ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_rvdmb"]
-[ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_xgfph"]
+[ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_v4ys4"]
+[ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_xcfkn"]
+[ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="3_4m0k2"]
+[ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_kt3ci"]
+[ext_resource type="PackedScene" uid="uid://d3ev2djd58xci" path="res://Objects/Characters/bomber.tscn" id="5_tyvuw"]
+[ext_resource type="Script" path="res://Objects/Characters/bomber.gd" id="6_2d6mk"]
+[ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_yeu7u"]
+[ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_et25s"]
+[ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_y0qhv"]
+[ext_resource type="PackedScene" uid="uid://3wsgvg4dl1a1" path="res://Objects/Items/item_scale_up.tscn" id="10_j6iqt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qat83"]
-texture = ExtResource("1_q01ka")
+texture = ExtResource("1_v4ys4")
 0:0/size_in_atlas = Vector2i(2, 3)
 0:0/0 = 0
 2:2/size_in_atlas = Vector2i(2, 1)
@@ -85,7 +85,7 @@ texture = ExtResource("1_q01ka")
 3:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_box0v"]
-texture = ExtResource("2_unte7")
+texture = ExtResource("2_xcfkn")
 0:0/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -307,9 +307,6 @@ texture = ExtResource("2_unte7")
 sources/0 = SubResource("TileSetAtlasSource_qat83")
 sources/1 = SubResource("TileSetAtlasSource_box0v")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
-size = Vector2(50, 50)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qosgu"]
 bg_color = Color(0.036982, 0.145885, 0.0368903, 1)
 border_width_left = 5
@@ -331,6 +328,7 @@ border_blend = true
 [node name="Level Scene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 3
 position = Vector2(120, 0)
 tile_set = SubResource("TileSet_1xfnh")
 format = 2
@@ -339,47 +337,23 @@ layer_0/tile_data = PackedInt32Array(65548, 1, 9, 65549, 1, 9, 65550, 1, 9, 6555
 layer_1/name = "objects"
 layer_1/tile_data = PackedInt32Array(2555964, 196608, 4, 2424890, 65536, 4, 2490436, 786432, 8, 2359352, 0, 0, 2359360, 0, 0, 2228288, 131072, 2, 2162748, 0, 0, 2424892, 131072, 2, 2359355, 131072, 10, 1835105, 65536, 4, 2162775, 65536, 4, 1441890, 65536, 4, 2424933, 65536, 4, 2555992, 65536, 4, 1900632, 0, 4, 1638501, 65536, 4, 2359390, 196608, 4, 2359379, 0, 4, 1507419, 0, 4, 1441886, 196608, 4, 2031709, 0, 4, 1769551, 0, 3, 2031698, 0, 3, 2228300, 65536, 3, 1572950, 65536, 3, 1310809, 65536, 3, 1245284, 0, 3, 1048671, 0, 3, 2097211, 0, 3, 2228273, 131072, 2, 2162732, 0, 0, 2359340, 0, 0, 2424871, 131072, 2, 2097219, 196608, 4, 1966156, 0, 4, 1507409, 0, 4, 2490445, 131072, 4, 1835047, 0, 0, 1900586, 131072, 2, 1638445, 0, 0, 1703975, 131072, 2, 1638434, 0, 0, 2162722, 0, 0, 2555938, 131072, 2, 1900575, 131072, 2, 2031649, 262144, 8, 2359328, 786432, 12, 1638456, 131072, 8, 1441839, 786432, 8, 1310794, 655360, 10, 1245259, 0, 10, 917568, 786432, 8, 655423, 262144, 12, 524342, 524288, 10, 852014, 393216, 8, 1048613, 262144, 10, 786468, 786432, 12, 589867, 655360, 10, 2228260, 0, 3, 2555952, 65536, 4, 917556, 65536, 4, 1310779, 196608, 4, 1179705, 0, 3, 1310771, 0, 4, 655449, 131072, 4, 917586, 65536, 4, 327761, 131072, 4, 393308, 0, 4, 262242, 65536, 3, 917604, 131072, 4, 131150, 131072, 4, 720972, 196608, 4, 1114199, 0, 4, 1441877, 196608, 4, 1048617, 65536, 4, 1376298, 0, 4, 1376289, 0, 4, 1507359, 65536, 4, 1245223, 0, 3, 196668, 0, 3, 524357, 0, 3, 65586, 196608, 4, 327743, 131072, 4, 196679, 0, 4, 917574, 196608, 4, 1376333, 131072, 2, 1114189, 0, 0, 1114177, 0, 0, 1310785, 0, 0, 1769523, 0, 0, 1835062, 131072, 2, 1507389, 131072, 2, 1703999, 131072, 2, 655420, 131072, 2, 589875, 0, 0, 393276, 0, 0, 393267, 0, 0, 589863, 0, 0, 458791, 131072, 2, 917539, 131072, 2, 1048621, 131072, 2, 983088, 0, 0, 2424854, 196608, 4, 2424849, 0, 4, 2228240, 131072, 2, 1966096, 0, 0, 2228250, 131072, 2, 1245211, 0, 4, 1703951, 65536, 3, 786457, 131072, 4, 262158, 0, 4, 65554, 65536, 4, 655373, 131072, 4, 262174, 65536, 3, 655391, 0, 3, 327718, 0, 4, 458774, 65536, 4, 1638419, 65536, 4, 1310742, 0, 3, 1769494, 131072, 4)
 
-[node name="Player" parent="." instance=ExtResource("2_u5u8m")]
+[node name="Player" parent="." instance=ExtResource("3_4m0k2")]
 position = Vector2(1240, 306)
 
-[node name="Zerger" parent="." groups=["Entities"] instance=ExtResource("4_pasr2")]
+[node name="Zerger" parent="." groups=["Entities"] instance=ExtResource("4_kt3ci")]
 position = Vector2(739, 392)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(468, 380)
-script = ExtResource("2_0wnst")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_7nq5s")
-
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-pivot_offset = Vector2(25, 25)
-color = Color(0.290927, 0.147216, 0.140679, 1)
-
-[node name="bomber" parent="." instance=ExtResource("6_4848t")]
+[node name="bomber" parent="." instance=ExtResource("5_tyvuw")]
 position = Vector2(776, 223)
-script = ExtResource("7_dppcx")
+script = ExtResource("6_2d6mk")
 
-[node name="Buffer" parent="." instance=ExtResource("7_nwo2f")]
+[node name="Buffer" parent="." instance=ExtResource("7_yeu7u")]
 position = Vector2(805, 51)
 
-[node name="Caster" parent="." instance=ExtResource("8_rvdmb")]
+[node name="Caster" parent="." instance=ExtResource("8_et25s")]
 position = Vector2(920, 72)
 
-[node name="Sniper" parent="." instance=ExtResource("9_xgfph")]
+[node name="Sniper" parent="." instance=ExtResource("9_y0qhv")]
 position = Vector2(1411, 134)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -393,3 +367,33 @@ theme_override_styles/background = SubResource("StyleBoxFlat_qosgu")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yhs3t")
 value = 100.0
 show_percentage = false
+
+[node name="Item_Scale_Up" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1219, 335)
+
+[node name="Item_Scale_Up2" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1226, 346)
+
+[node name="Item_Scale_Up3" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1205, 352)
+
+[node name="Item_Scale_Up4" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1194, 341)
+
+[node name="Item_Scale_Up5" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1185, 352)
+
+[node name="Item_Scale_Up6" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1194, 362)
+
+[node name="Item_Scale_Up7" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1219, 361)
+
+[node name="Item_Scale_Up8" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1243, 357)
+
+[node name="Item_Scale_Up9" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1252, 346)
+
+[node name="Item_Scale_Up10" parent="." instance=ExtResource("10_j6iqt")]
+position = Vector2(1261, 358)
