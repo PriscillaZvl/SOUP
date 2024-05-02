@@ -12,16 +12,31 @@ public partial class PlayerStats : Node
 	[Export] public float DodgeChance { get; private set; } = 0.01f;
 	[Export] public float Lifesteal { get; private set; } = 0f;
 
+	// Declare the signal with the correct EventHandler naming
+	[Signal]
+	public delegate void AttackSpeedChangedEventHandler(float newSpeed);
+
 	public void TakeDamage(int amount)
 	{
-		// Dodge chance calculation
 		if (GD.Randf() <= DodgeChance)
-		{
 			return;
-		}
 
-		// Health calculation
 		HP -= amount;
 		HP = Mathf.Max(HP, 0);
+	}
+
+	public float GetAttackSpeed()
+	{
+		return AttackSpeed;
+	}
+
+	public void SetAttackSpeed(float newSpeed)
+	{
+		if (AttackSpeed != newSpeed)
+		{
+			AttackSpeed = newSpeed;
+			EmitSignal(nameof(AttackSpeedChanged), newSpeed);
+			GD.Print("Attack Speed is now: " + AttackSpeed);
+		}
 	}
 }

@@ -87,10 +87,8 @@ script = ExtResource("2_edmq6")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/FireSpell"]
 light_mask = 31
 visibility_layer = 31
-emitting = false
 amount = 100
 lifetime = 2.0
-one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.25
@@ -128,10 +126,8 @@ script = ExtResource("2_edmq6")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/Lance"]
 light_mask = 31
 visibility_layer = 31
-emitting = false
 amount = 50
 lifetime = 2.0
-one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.25

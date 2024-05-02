@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://3wsgvg4dl1a1"]
+[gd_scene load_steps=3 format=3 uid="uid://dip1kuwdcmq2j"]
 
-[ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="1_pvfx8"]
+[ext_resource type="Script" path="res://Scripts/Items/ItemAttackSpeedUp.gd" id="1_fnqve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq5s"]
 size = Vector2(50, 50)
 
-[node name="Item_Scale_Up" type="Area2D"]
+[node name="Item_Attack_Speed" type="Area2D"]
 position = Vector2(1197, 358)
 scale = Vector2(0.15, 0.15)
-script = ExtResource("1_pvfx8")
+script = ExtResource("1_fnqve")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7nq5s")
@@ -26,5 +26,5 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(25, 25)
-color = Color(0.110913, 0.551505, 0.565546, 1)
+color = Color(1, 0.743453, 0.186456, 1)
 metadata/_edit_use_anchors_ = true

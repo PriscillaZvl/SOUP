@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_v4ys4"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_xcfkn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_yeu7u"]
 [ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_et25s"]
 [ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_y0qhv"]
+[ext_resource type="PackedScene" uid="uid://dip1kuwdcmq2j" path="res://Objects/Items/item_attack_speed.tscn" id="10_dnls3"]
 [ext_resource type="PackedScene" uid="uid://3wsgvg4dl1a1" path="res://Objects/Items/item_scale_up.tscn" id="10_j6iqt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qat83"]
@@ -326,6 +327,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [node name="Level Scene" type="Node2D"]
+position = Vector2(-46, -13)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 3
@@ -368,32 +370,92 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_yhs3t")
 value = 100.0
 show_percentage = false
 
+[node name="Item_Attack_Speed" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1276, 381)
+
+[node name="Item_Attack_Speed2" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1244, 386)
+
+[node name="Item_Attack_Speed3" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1259, 371)
+
+[node name="Item_Attack_Speed4" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1292, 363)
+
+[node name="Item_Attack_Speed5" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1307, 380)
+
+[node name="Item_Attack_Speed11" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1319, 388)
+
+[node name="Item_Attack_Speed12" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1327, 380)
+
+[node name="Item_Attack_Speed13" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1340, 399)
+
+[node name="Item_Attack_Speed14" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1315, 413)
+
+[node name="Item_Attack_Speed15" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1281, 424)
+
+[node name="Item_Attack_Speed16" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1305, 440)
+
+[node name="Item_Attack_Speed17" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1342, 435)
+
+[node name="Item_Attack_Speed18" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1371, 423)
+
+[node name="Item_Attack_Speed19" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1402, 414)
+
+[node name="Item_Attack_Speed20" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1412, 398)
+
+[node name="Item_Attack_Speed21" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1432, 388)
+
+[node name="Item_Attack_Speed22" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1412, 355)
+
+[node name="Item_Attack_Speed23" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1381, 360)
+
+[node name="Item_Attack_Speed24" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1366, 360)
+
+[node name="Item_Attack_Speed6" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1294, 394)
+
+[node name="Item_Attack_Speed7" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1400, 374)
+
+[node name="Item_Attack_Speed8" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1381, 393)
+
+[node name="Item_Attack_Speed9" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1359, 386)
+
+[node name="Item_Attack_Speed10" parent="." instance=ExtResource("10_dnls3")]
+position = Vector2(1359, 386)
+
 [node name="Item_Scale_Up" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1219, 335)
+position = Vector2(1236, 373)
 
 [node name="Item_Scale_Up2" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1226, 346)
+position = Vector2(1207, 382)
 
 [node name="Item_Scale_Up3" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1205, 352)
+position = Vector2(1174, 372)
 
 [node name="Item_Scale_Up4" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1194, 341)
+position = Vector2(1169, 403)
 
 [node name="Item_Scale_Up5" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1185, 352)
+position = Vector2(1202, 412)
 
 [node name="Item_Scale_Up6" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1194, 362)
-
-[node name="Item_Scale_Up7" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1219, 361)
-
-[node name="Item_Scale_Up8" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1243, 357)
-
-[node name="Item_Scale_Up9" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1252, 346)
-
-[node name="Item_Scale_Up10" parent="." instance=ExtResource("10_j6iqt")]
-position = Vector2(1261, 358)
+position = Vector2(1233, 419)
