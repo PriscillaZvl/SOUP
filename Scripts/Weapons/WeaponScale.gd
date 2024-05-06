@@ -1,6 +1,6 @@
 extends Node2D
 
-# Syncs CPUParticles2D and CollisionShape2D scales into one super easy variable.
+# Syncs CPUParticles2D scale and adjusts particle count based on a single scale variable.
 
 var _scale_factor = 1.0
 var last_scale = Vector2()

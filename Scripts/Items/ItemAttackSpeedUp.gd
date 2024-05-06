@@ -10,7 +10,7 @@ func _on_body_entered(_body: PhysicsBody2D) -> void:
 	if player_stats:
 		var current_attack_speed = player_stats.GetAttackSpeed()
 		# Calculate the new attack speed to make it faster
-		var new_attack_speed = current_attack_speed * 0.9  # Decrease interval to speed up attacks
+		var new_attack_speed = current_attack_speed * 0.95  # Decrease interval to speed up attacks
 		player_stats.SetAttackSpeed(new_attack_speed)
 	
 	# Delete this item
