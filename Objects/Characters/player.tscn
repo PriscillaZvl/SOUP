@@ -28,11 +28,11 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_vxq3i"]
 resource_name = "Fire"
-colors = PackedColorArray(0.8, 0, 0, 1, 0.750802, 0.297036, 0.155057, 1)
+colors = PackedColorArray(0.8, 0, 0, 1, 0.941082, 0.382373, 1.92523e-07, 1)
 
 [sub_resource type="Curve" id="Curve_vctbq"]
 min_value = -1.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.986667, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0anjf"]
@@ -106,6 +106,7 @@ scale_amount_min = 0.5
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_hchan")
 color_ramp = SubResource("Gradient_vxq3i")
+hue_variation_max = 0.1
 hue_variation_curve = SubResource("Curve_vctbq")
 script = ExtResource("3_hbuck")
 
@@ -147,6 +148,7 @@ scale_amount_min = 0.5
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_hchan")
 color_ramp = SubResource("Gradient_ntn62")
+hue_variation_max = 0.05
 hue_variation_curve = SubResource("Curve_vctbq")
 script = ExtResource("3_hbuck")
 
