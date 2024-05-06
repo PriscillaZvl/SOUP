@@ -12,14 +12,8 @@ func _ready():
 	timer.one_shot = false
 	timer.autostart = true
 	timer.timeout.connect(_on_timer_timeout)
-	area_entered.connect(_on_area_entered)
 
-# Called when an area enters the Area2D
-func _on_area_entered(area):
-	if area.is_in_group("Entities"):
-		timer.start()
-
-# Deals damage to the entity
+# Deals damage to the entity if inside the area
 func _on_timer_timeout():
 	for area in get_overlapping_areas():
 		if area.is_in_group("Entities"):
