@@ -123,7 +123,6 @@ scale = Vector2(12, 12)
 shape = SubResource("CircleShape2D_0anjf")
 
 [node name="Lance" type="Area2D" parent="PlayerWeapons"]
-visible = false
 script = ExtResource("2_edmq6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerWeapons/Lance"]

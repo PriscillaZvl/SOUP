@@ -11,6 +11,8 @@ public partial class PlayerStats : Node
 	[Export] public float MovementSpeed { get; private set; } = 50f;
 	[Export] public float DodgeChance { get; private set; } = 0.01f;
 	[Export] public float Lifesteal { get; private set; } = 0f;
+	[Export] public bool Lance { get; private set; } = false;
+	[Export] public bool FireSpell { get; private set; } = true;
 
 	// Declare the signal for WeaponRepeat.gd
 	[Signal] public delegate void AttackSpeedChangedEventHandler(float newSpeed);
