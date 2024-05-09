@@ -1,13 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2bqb48g4lvrc"]
+[gd_scene load_steps=6 format=3 uid="uid://b2bqb48g4lvrc"]
 
 [ext_resource type="Script" path="res://Objects/Characters/zerger.gd" id="1_46ysx"]
+[ext_resource type="Texture2D" uid="uid://lhwgstds1hi5" path="res://Artwork/flying_eye.png" id="2_5xb8t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lvrwb"]
-radius = 32.0156
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_8etha"]
+resource_name = "Flying"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rw6xx"]
+_data = {
+"Flying": SubResource("Animation_8etha")
+}
 
 [node name="Zerger" type="CharacterBody2D"]
 script = ExtResource("1_46ysx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-6, 3)
+shape = SubResource("CircleShape2D_lvrwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5xb8t")
+offset = Vector2(-10, 0)
+hframes = 6
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rw6xx")
+}
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-6, 3)
 shape = SubResource("CircleShape2D_lvrwb")
