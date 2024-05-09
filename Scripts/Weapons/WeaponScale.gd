@@ -20,4 +20,3 @@ func update_scale():
 	if cpu_particles:
 		cpu_particles.scale = Vector2(_scale_factor, _scale_factor)
 		cpu_particles.amount = int(100 * pow(_scale_factor, 2))
-		print("Updated particle count: ", cpu_particles.amount)

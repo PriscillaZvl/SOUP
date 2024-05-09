@@ -13,8 +13,7 @@ public partial class PlayerStats : Node
 	[Export] public float Lifesteal { get; private set; } = 0f;
 
 	// Declare the signal for WeaponRepeat.gd
-	[Signal]
-	public delegate void AttackSpeedChangedEventHandler(float newSpeed);
+	[Signal] public delegate void AttackSpeedChangedEventHandler(float newSpeed);
 
 	public void TakeDamage(int amount)
 	{
