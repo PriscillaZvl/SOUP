@@ -16,7 +16,7 @@ func _physics_process(delta):
 
 func _on_Hurtbox_area_entered(area):
 	var player = get_node("/root/Level Scene/Player")
-	var weapons_node = player.get_node_or_null("PlayerStats")
+	var weapons_node = player.get_node_or_null("Weapons")
 	if weapons_node:
 		if area.get_parent().get_parent() == weapons_node:
 			var damage = 0
@@ -40,3 +40,4 @@ func die():
 # will remove after
 #func _process(delta):
 #	print("Current Health: ", health)
+
