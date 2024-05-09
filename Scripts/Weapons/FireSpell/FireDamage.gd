@@ -12,17 +12,30 @@ func _ready():
 	timer.one_shot = false
 	timer.autostart = true
 	timer.timeout.connect(_on_timer_timeout)
+	area_entered.connect(_on_Area_Entered)
+	
+func _on_Area_Entered(area):
+	print("Area entered: ", area.name, ", in group 'Entities': ", area.is_in_group("Entities"))
+	if area.is_in_group("Entities"):
+		print("Entity entered: ", area.name)
+		deal_fire_damage(area)
+
 
 # Deals damage to the entity if inside the area
 func _on_timer_timeout():
+	print("Timer check, areas overlapping: ", get_overlapping_areas().size())
 	for area in get_overlapping_areas():
-		if area.is_in_group("Entities"):
+		if area.is_in_group("Entities") and area.has_method("take_damage"):
+			print("Dealt damage!")
 			deal_fire_damage(area)
 
 func deal_fire_damage(target):
-	# Access the LanceDamage from PlayerStats and apply it to the target
-	if target.has_method("take_damage"):
-		target.take_damage(player_stats.FireDamage)
+	var entity = target.get_parent()
+	
+	# Access Fire Damage from PlayerStats and apply it to the target
+	if entity and entity.has_method("take_damage"):
+		entity.take_damage(player_stats.FireDamage)
+		print("Attempting to deal damage to: ", entity.name)
 
 	# Apply lifesteal if applicable
 	var healthToSteal = floor(player_stats.FireDamage * player_stats.Lifesteal)

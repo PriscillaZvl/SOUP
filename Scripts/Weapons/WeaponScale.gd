@@ -8,7 +8,7 @@ var last_scale = Vector2()
 func _ready():
 	last_scale = scale
 	
-func _process(delta):
+func _process(_delta):
 	if scale != last_scale:
 		_scale_factor = scale.x
 		update_scale()

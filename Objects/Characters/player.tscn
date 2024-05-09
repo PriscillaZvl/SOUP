@@ -115,6 +115,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="DamageArea" type="Area2D" parent="PlayerWeapons/FireSpell"]
+disable_mode = 2
 script = ExtResource("4_8h2dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/FireSpell/DamageArea"]
@@ -157,6 +158,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="DamageArea" type="Area2D" parent="PlayerWeapons/Lance"]
+disable_mode = 2
 script = ExtResource("5_n413d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWeapons/Lance/DamageArea"]

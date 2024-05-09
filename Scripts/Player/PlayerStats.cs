@@ -38,4 +38,12 @@ public partial class PlayerStats : Node
 			EmitSignal(nameof(AttackSpeedChanged), newSpeed);
 		}
 	}
+	
+	public void Heal(int amount)
+	{
+		HP += amount;
+		
+		if (HP > maxHP)
+			HP = maxHP;
+	}
 }

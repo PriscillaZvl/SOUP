@@ -16,7 +16,7 @@ func _physics_process(delta):
 
 func _on_Hurtbox_area_entered(area):
 	var player = get_node("/root/Level Scene/Player")
-	var weapons_node = player.get_node_or_null("Weapons")
+	var weapons_node = player.get_node_or_null("PlayerStats")
 	if weapons_node:
 		if area.get_parent().get_parent() == weapons_node:
 			var damage = 0
@@ -28,6 +28,7 @@ func _on_Hurtbox_area_entered(area):
 
 # This function is called by the player's attack when it overlaps with this enemy.
 func take_damage(damage_amount):
+	print("Took ", damage_amount, " damage")
 	health -= damage_amount
 	if health <= 0:
 		die()
@@ -37,5 +38,5 @@ func die():
 	queue_free()
 
 # will remove after
-func _process(delta):
-	print("Current Health: ", health)
+#func _process(delta):
+#	print("Current Health: ", health)

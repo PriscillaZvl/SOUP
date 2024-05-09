@@ -342,7 +342,7 @@ layer_1/tile_data = PackedInt32Array(2555964, 196608, 4, 2424890, 65536, 4, 2490
 [node name="Player" parent="." instance=ExtResource("3_4m0k2")]
 position = Vector2(1240, 306)
 
-[node name="Zerger" parent="." groups=["Entities"] instance=ExtResource("4_kt3ci")]
+[node name="Zerger" parent="." instance=ExtResource("4_kt3ci")]
 position = Vector2(739, 392)
 
 [node name="bomber" parent="." instance=ExtResource("5_tyvuw")]

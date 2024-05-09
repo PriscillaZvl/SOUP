@@ -28,26 +28,28 @@ _data = {
 "Flying": SubResource("Animation_8etha")
 }
 
-[node name="Zerger" type="CharacterBody2D"]
+[node name="Zerger" type="CharacterBody2D" groups=["Entities"]]
 script = ExtResource("1_46ysx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Entities"]]
 position = Vector2(-6, 3)
 shape = SubResource("CircleShape2D_lvrwb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Entities"]]
+texture_filter = 1
 texture = ExtResource("2_5xb8t")
 offset = Vector2(-10, 0)
 hframes = 6
 frame = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Entities"]]
 libraries = {
 "": SubResource("AnimationLibrary_rw6xx")
 }
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["Entities"]]
+disable_mode = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" groups=["Entities"]]
 position = Vector2(-6, 3)
 shape = SubResource("CircleShape2D_lvrwb")
