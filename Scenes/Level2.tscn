@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=18 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_v4ys4"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_xcfkn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_y0qhv"]
 [ext_resource type="PackedScene" uid="uid://dip1kuwdcmq2j" path="res://Objects/Items/item_attack_speed.tscn" id="10_dnls3"]
 [ext_resource type="PackedScene" uid="uid://3wsgvg4dl1a1" path="res://Objects/Items/item_scale_up.tscn" id="10_j6iqt"]
+[ext_resource type="PackedScene" uid="uid://b735sby2iaj4m" path="res://PauseMenu/pause_menu.tscn" id="12_aew7y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qat83"]
 texture = ExtResource("1_v4ys4")
@@ -483,3 +484,11 @@ position = Vector2(1202, 412)
 
 [node name="Item_Scale_Up6" parent="." instance=ExtResource("10_j6iqt")]
 position = Vector2(1233, 419)
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("12_aew7y")]
+offset_left = -46.0
+offset_top = -13.0
+offset_right = -46.0
+offset_bottom = -13.0

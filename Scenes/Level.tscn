@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=18 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
 [ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="2_0wnst"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_nwo2f"]
 [ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_rvdmb"]
 [ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_xgfph"]
+[ext_resource type="PackedScene" uid="uid://b735sby2iaj4m" path="res://PauseMenu/pause_menu.tscn" id="11_2h6iq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qat83"]
 texture = ExtResource("1_q01ka")
@@ -342,7 +343,7 @@ layer_1/tile_data = PackedInt32Array(2555964, 196608, 4, 2424890, 65536, 4, 2490
 [node name="Player" parent="." instance=ExtResource("2_u5u8m")]
 position = Vector2(1240, 306)
 
-[node name="Zerger" parent="." groups=["Entities"] instance=ExtResource("4_pasr2")]
+[node name="Zerger" parent="." instance=ExtResource("4_pasr2")]
 position = Vector2(739, 392)
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -393,3 +394,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_qosgu")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yhs3t")
 value = 100.0
 show_percentage = false
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("11_2h6iq")]
