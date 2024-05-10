@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccnwro1sd7ubo"]
+[gd_scene load_steps=6 format=3 uid="uid://ccnwro1sd7ubo"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_hd8xe"]
 [ext_resource type="Texture2D" uid="uid://dka0ic5ifsq6m" path="res://hudArt/Temporary_Main_Menu_BackGround.png" id="2_h7hb4"]
+[ext_resource type="PackedScene" uid="uid://cdtg11amkkdht" path="res://OptionsMenu/options_menu.tscn" id="3_45a7g"]
 
 [sub_resource type="SystemFont" id="SystemFont_aaecy"]
 font_names = PackedStringArray("Impact")
@@ -52,7 +53,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0572158, 0.411907, 0.631168, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 18
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = SubResource("SystemFont_aaecy")
 theme_override_font_sizes/font_size = 90
 text = "Game Title"
@@ -84,8 +85,12 @@ theme_override_fonts/font = SubResource("SystemFont_dupkq")
 theme_override_font_sizes/font_size = 35
 text = "Start Game"
 
-[node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 50)
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_dupkq")
+theme_override_font_sizes/font_size = 35
+text = "Options"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(170, 50)
@@ -93,3 +98,7 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_dupkq")
 theme_override_font_sizes/font_size = 35
 text = "Exit Game"
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_45a7g")]
+visible = false
+layout_mode = 1
