@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=20 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_v4ys4"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_xcfkn"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dip1kuwdcmq2j" path="res://Objects/Items/item_attack_speed.tscn" id="10_dnls3"]
 [ext_resource type="PackedScene" uid="uid://3wsgvg4dl1a1" path="res://Objects/Items/item_scale_up.tscn" id="10_j6iqt"]
 [ext_resource type="PackedScene" uid="uid://b735sby2iaj4m" path="res://PauseMenu/pause_menu.tscn" id="12_aew7y"]
+[ext_resource type="Script" path="res://Scenes/timer_label.gd" id="13_1qu8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qat83"]
 texture = ExtResource("1_v4ys4")
@@ -309,7 +310,7 @@ texture = ExtResource("2_xcfkn")
 sources/0 = SubResource("TileSetAtlasSource_qat83")
 sources/1 = SubResource("TileSetAtlasSource_box0v")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qosgu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndjw5"]
 bg_color = Color(0.036982, 0.145885, 0.0368903, 1)
 border_width_left = 5
 border_width_top = 5
@@ -318,7 +319,7 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhs3t"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe2t1"]
 bg_color = Color(0.260728, 0.704419, 0.34044, 1)
 border_width_left = 5
 border_width_top = 5
@@ -326,6 +327,9 @@ border_width_right = 3
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
+
+[sub_resource type="SystemFont" id="SystemFont_8b5lp"]
+font_names = PackedStringArray("Maku")
 
 [node name="Level Scene" type="Node2D"]
 position = Vector2(-46, -13)
@@ -358,18 +362,6 @@ position = Vector2(920, 72)
 
 [node name="Sniper" parent="." instance=ExtResource("9_y0qhv")]
 position = Vector2(1411, 134)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 27.0
-offset_top = 14.0
-offset_right = 568.0
-offset_bottom = 57.0
-theme_override_styles/background = SubResource("StyleBoxFlat_qosgu")
-theme_override_styles/fill = SubResource("StyleBoxFlat_yhs3t")
-value = 100.0
-show_percentage = false
 
 [node name="Item_Attack_Speed" parent="." instance=ExtResource("10_dnls3")]
 position = Vector2(1276, 381)
@@ -484,6 +476,39 @@ position = Vector2(1202, 412)
 
 [node name="Item_Scale_Up6" parent="." instance=ExtResource("10_j6iqt")]
 position = Vector2(1233, 419)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Control"]
+offset_left = 27.0
+offset_top = 14.0
+offset_right = 568.0
+offset_bottom = 57.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ndjw5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qe2t1")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 6.0
+offset_right = 1096.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_8b5lp")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_1qu8k")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 

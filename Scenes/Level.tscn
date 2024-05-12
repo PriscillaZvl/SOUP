@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=20 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
 [ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="2_0wnst"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_rvdmb"]
 [ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_xgfph"]
 [ext_resource type="PackedScene" uid="uid://b735sby2iaj4m" path="res://PauseMenu/pause_menu.tscn" id="11_2h6iq"]
+[ext_resource type="Script" path="res://Scenes/timer_label.gd" id="11_b2ffm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qat83"]
 texture = ExtResource("1_q01ka")
@@ -329,6 +330,9 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
+[sub_resource type="SystemFont" id="SystemFont_vxdwn"]
+font_names = PackedStringArray("Maku")
+
 [node name="Level Scene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -384,9 +388,17 @@ position = Vector2(920, 72)
 [node name="Sniper" parent="." instance=ExtResource("9_xgfph")]
 position = Vector2(1411, 134)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Control"]
 offset_left = 27.0
 offset_top = 14.0
 offset_right = 568.0
@@ -396,6 +408,20 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_yhs3t")
 value = 100.0
 show_percentage = false
 
+[node name="Label" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 6.0
+offset_right = 1096.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_vxdwn")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_b2ffm")
+
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("11_2h6iq")]
