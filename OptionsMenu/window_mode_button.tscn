@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdn1bdrrip8m5"]
+
+[ext_resource type="PackedScene" uid="uid://opo4aff15824" path="res://OptionsMenu/options_display_button.tscn" id="1_qy8v0"]
+[ext_resource type="Script" path="res://OptionsMenu/window_mode_button.gd" id="2_1b6ix"]
+
+[sub_resource type="SystemFont" id="SystemFont_rj6to"]
+font_names = PackedStringArray("Impact")
+
+[node name="Window_Mode_Button" instance=ExtResource("1_qy8v0")]
+script = ExtResource("2_1b6ix")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+theme_override_fonts/font = SubResource("SystemFont_rj6to")
+text = "  Window Mode"
+vertical_alignment = 1
