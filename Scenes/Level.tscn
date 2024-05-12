@@ -399,6 +399,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="HUD/Control"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 14.0
 offset_right = 568.0
@@ -415,10 +416,10 @@ anchor_left = 0.984
 anchor_top = 0.014
 anchor_right = 0.984
 anchor_bottom = 0.014
-offset_left = -136.568
-offset_top = -0.0720003
-offset_right = 7.43197
-offset_bottom = 58.928
+offset_left = -145.568
+offset_top = -5.072
+offset_right = -1.56803
+offset_bottom = 53.928
 grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_vxdwn")
