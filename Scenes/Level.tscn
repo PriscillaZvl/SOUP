@@ -409,11 +409,17 @@ value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="HUD/Control"]
-layout_mode = 0
-offset_left = 952.0
-offset_top = 6.0
-offset_right = 1096.0
-offset_bottom = 65.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.984
+anchor_top = 0.014
+anchor_right = 0.984
+anchor_bottom = 0.014
+offset_left = -136.568
+offset_top = -0.0720003
+offset_right = 7.43197
+offset_bottom = 58.928
+grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_vxdwn")
 theme_override_font_sizes/font_size = 35
@@ -422,6 +428,5 @@ vertical_alignment = 1
 script = ExtResource("11_b2ffm")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("11_2h6iq")]
