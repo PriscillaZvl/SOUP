@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 30 # Speed of the enemy
+var speed = 35 # Speed of the enemy
 var health = 30 # Health of the enemy
 
 func _ready():
