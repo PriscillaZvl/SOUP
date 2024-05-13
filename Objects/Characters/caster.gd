@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var speed = 25 # Speed of the enemy
-var health = 60 # Health of the enemy
+var speed = 20 # Speed of the enemy
+var health = 25 # Health of the enemy
 
 func _ready():
 	add_to_group("Entities")

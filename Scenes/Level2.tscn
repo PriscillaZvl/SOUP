@@ -1,11 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=16 format=3 uid="uid://cr8o427y1t6kg"]
 
+[ext_resource type="Script" path="res://Scenes/Level2.gd" id="1_giaxe"]
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_v4ys4"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_xcfkn"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="3_4m0k2"]
-[ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_yeu7u"]
-[ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_et25s"]
-[ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_y0qhv"]
 [ext_resource type="PackedScene" uid="uid://dip1kuwdcmq2j" path="res://Objects/Items/item_attack_speed.tscn" id="10_dnls3"]
 [ext_resource type="PackedScene" uid="uid://3wsgvg4dl1a1" path="res://Objects/Items/item_scale_up.tscn" id="10_j6iqt"]
 [ext_resource type="PackedScene" uid="uid://b735sby2iaj4m" path="res://PauseMenu/pause_menu.tscn" id="12_aew7y"]
@@ -328,8 +326,15 @@ border_blend = true
 [sub_resource type="SystemFont" id="SystemFont_644jc"]
 font_names = PackedStringArray("Maku")
 
+[sub_resource type="Curve2D" id="Curve2D_as4n7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 283, -35, 0, 0, 0, 0, 1805, -43, 0, 0, 0, 0, 1797, 673, 0, 0, 0, 0, 281, 673, 0, 0, 0, 0, 283, -35)
+}
+point_count = 5
+
 [node name="Level Scene" type="Node2D"]
 position = Vector2(-46, -13)
+script = ExtResource("1_giaxe")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 3
@@ -343,15 +348,6 @@ layer_1/tile_data = PackedInt32Array(2555964, 196608, 4, 2424890, 65536, 4, 2490
 
 [node name="Player" parent="." instance=ExtResource("3_4m0k2")]
 position = Vector2(1240, 306)
-
-[node name="Buffer" parent="." groups=["Entities"] instance=ExtResource("7_yeu7u")]
-position = Vector2(805, 51)
-
-[node name="Caster" parent="." groups=["Entities"] instance=ExtResource("8_et25s")]
-position = Vector2(920, 72)
-
-[node name="Sniper" parent="." groups=["Entities"] instance=ExtResource("9_y0qhv")]
-position = Vector2(1411, 134)
 
 [node name="Item_Attack_Speed" parent="." instance=ExtResource("10_dnls3")]
 position = Vector2(1276, 381)
@@ -510,3 +506,15 @@ script = ExtResource("13_1qu8k")
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("12_aew7y")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_as4n7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(283, -35)
+rotation = -0.00525619
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
