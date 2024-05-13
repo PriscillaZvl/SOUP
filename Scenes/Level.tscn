@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=19 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
 [ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="2_0wnst"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_unte7"]
 [ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_pasr2"]
 [ext_resource type="PackedScene" uid="uid://d3ev2djd58xci" path="res://Objects/Characters/bomber.tscn" id="6_4848t"]
-[ext_resource type="Script" path="res://Objects/Characters/bomber.gd" id="7_dppcx"]
 [ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_nwo2f"]
 [ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_rvdmb"]
 [ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_xgfph"]
@@ -377,7 +376,6 @@ color = Color(0.290927, 0.147216, 0.140679, 1)
 
 [node name="bomber" parent="." instance=ExtResource("6_4848t")]
 position = Vector2(776, 223)
-script = ExtResource("7_dppcx")
 
 [node name="Buffer" parent="." instance=ExtResource("7_nwo2f")]
 position = Vector2(805, 51)
