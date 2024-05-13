@@ -36,6 +36,25 @@ func take_damage(damage_amount):
 # Handles the death of the enemy.
 func die():
 	queue_free()
+	
+	var chance = randf_range(0, 100)
+	
+	if chance <= 5:
+		var item_path = ""
+		
+		if randf_range(0, 1) < 0.5:
+			item_path = "res://Objects/Items/item_attack_speed.tscn"
+		else:
+			item_path = "res://Objects/Items/item_scale_up.tscn"
+		
+		var item_scene = load(item_path)
+		
+		if item_scene and item_scene is PackedScene:
+			var item = item_scene.instantiate()
+			get_parent().add_child(item)
+			
+		else:
+			print("Failed to load: ", item_path)
 
 # will remove after
 #func _process(delta):
