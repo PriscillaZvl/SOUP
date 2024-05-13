@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctcvq7d37my0p" path="res://Artwork/wizard_idle.png" id="1_vpvrd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3c2x1"]
-radius = 56.0089
+radius = 43.0
 
 [sub_resource type="Animation" id="Animation_0wjir"]
 resource_name = "wizard_walk"
@@ -29,7 +29,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5sp1e"]
-radius = 56.0357
+radius = 43.0116
 
 [node name="Caster" type="CharacterBody2D"]
 script = ExtResource("1_oj1y1")

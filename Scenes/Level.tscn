@@ -1,14 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=16 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_q01ka"]
+[ext_resource type="Script" path="res://Scenes/Level.gd" id="1_rxv8w"]
 [ext_resource type="Script" path="res://Scripts/Items/ItemScaleUp.gd" id="2_0wnst"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="2_u5u8m"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_unte7"]
-[ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_pasr2"]
-[ext_resource type="PackedScene" uid="uid://d3ev2djd58xci" path="res://Objects/Characters/bomber.tscn" id="6_4848t"]
-[ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_nwo2f"]
-[ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_rvdmb"]
-[ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_xgfph"]
 [ext_resource type="PackedScene" uid="uid://b735sby2iaj4m" path="res://PauseMenu/pause_menu.tscn" id="11_2h6iq"]
 [ext_resource type="Script" path="res://Scenes/timer_label.gd" id="11_b2ffm"]
 
@@ -332,7 +328,14 @@ border_blend = true
 [sub_resource type="SystemFont" id="SystemFont_vxdwn"]
 font_names = PackedStringArray("Maku")
 
+[sub_resource type="Curve2D" id="Curve2D_jk4ob"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 104, -244, 0, 0, 0, 0, 1939, -227, 0, 0, 0, 0, 1937, 691, 0, 0, 0, 0, 100, 671, 0, 0, 0, 0, 110, -241)
+}
+point_count = 5
+
 [node name="Level Scene" type="Node2D"]
+script = ExtResource("1_rxv8w")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -346,9 +349,6 @@ layer_1/tile_data = PackedInt32Array(2555964, 196608, 4, 2424890, 65536, 4, 2490
 
 [node name="Player" parent="." instance=ExtResource("2_u5u8m")]
 position = Vector2(1240, 306)
-
-[node name="Zerger" parent="." instance=ExtResource("4_pasr2")]
-position = Vector2(739, 392)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(468, 380)
@@ -373,18 +373,6 @@ grow_vertical = 2
 scale = Vector2(5, 5)
 pivot_offset = Vector2(25, 25)
 color = Color(0.290927, 0.147216, 0.140679, 1)
-
-[node name="bomber" parent="." instance=ExtResource("6_4848t")]
-position = Vector2(776, 223)
-
-[node name="Buffer" parent="." instance=ExtResource("7_nwo2f")]
-position = Vector2(805, 51)
-
-[node name="Caster" parent="." instance=ExtResource("8_rvdmb")]
-position = Vector2(920, 72)
-
-[node name="Sniper" parent="." instance=ExtResource("9_xgfph")]
-position = Vector2(1411, 134)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -429,3 +417,15 @@ script = ExtResource("11_b2ffm")
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="PauseMenu" instance=ExtResource("11_2h6iq")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jk4ob")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(104, -244)
+rotation = 0.00926404
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

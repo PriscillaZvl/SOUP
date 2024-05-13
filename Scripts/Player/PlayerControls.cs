@@ -4,10 +4,12 @@ using System;
 public partial class PlayerControls : Node2D
 {
 	private PlayerStats PlayerStats;
+	private AnimationPlayer AnimationPlayer;
 
 	public override void _Ready()
 	{
 		PlayerStats = GetNode<PlayerStats>("PlayerStats");
+		AnimationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
 	public override void _Process(double delta)
@@ -32,6 +34,8 @@ public partial class PlayerControls : Node2D
 			
 			// Calculate the rotation in radians and set the rotation of the player
 			Rotation = velocity.Angle() + Mathf.Pi / 2;
+			
+			AnimationPlayer.Play("player_walk");
 		}
 	}
 }
