@@ -1,7 +1,7 @@
 # Vampire Survivors inspired game
 Our game was inspired by the popular Vampire Survivors game. The game we have created is a 2D top-down roguelike game with endless gameplay. The player has to fight off waves of different enemy types each with their own abilities. Your goal is to survive as long as possible!
 
-We used the Godot engine and we made use of GDScript as well as some C# scripts to create the game.
+We used the Godot engine and we made use of GDScript as well as some C# scripts to design the game menus, weapons, enemies, and the player.
 
 ![Screenshot 2024-05-13 092359](https://github.com/PriscillaZvl/SOUP/assets/158341505/6bd4a00d-abba-40be-95b2-3610543a1c92)
 
