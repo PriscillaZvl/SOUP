@@ -11,11 +11,16 @@ public partial class PlayerStats : Node
 	[Export] public float MovementSpeed { get; private set; } = 50f;
 	[Export] public float DodgeChance { get; private set; } = 0.01f;
 	[Export] public float Lifesteal { get; private set; } = 0f;
-	[Export] public bool Lance { get; private set; } = false;
+	[Export] public bool Lance { get; private set; } = true;
 	[Export] public bool FireSpell { get; private set; } = true;
 
 	// Declare the signal for WeaponRepeat.gd
 	[Signal] public delegate void AttackSpeedChangedEventHandler(float newSpeed);
+	
+	public override void _Ready()
+	{
+		RandomizeWeapon();
+	}
 
 	public void TakeDamage(int amount)
 	{
@@ -46,5 +51,20 @@ public partial class PlayerStats : Node
 		
 		if (HP > maxHP)
 			HP = maxHP;
+	}
+	
+	private void RandomizeWeapon()
+	{
+		if (GD.Randi() % 2 == 0)
+		{
+			Lance = true;
+			FireSpell = false;
+			GD.Print("Using Lance!");
+		}
+		else {
+			Lance = false;
+			FireSpell = true;
+			GD.Print("Using FireSpell!");
+		}
 	}
 }

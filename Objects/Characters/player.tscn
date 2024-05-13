@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://djwvyv1ocqll5"]
+[gd_scene load_steps=18 format=3 uid="uid://djwvyv1ocqll5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerControls.cs" id="1_faxeh"]
 [ext_resource type="Script" path="res://Scripts/Weapons/WeaponScale.gd" id="2_edmq6"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerWeapons.gd" id="2_ogu3p"]
 [ext_resource type="Script" path="res://Scripts/Weapons/WeaponRepeat.gd" id="3_hbuck"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerStats.cs" id="3_jry8k"]
 [ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireDamage.gd" id="4_8h2dc"]
@@ -80,6 +81,7 @@ position_smoothing_speed = 100.0
 shape = SubResource("RectangleShape2D_gjs2j")
 
 [node name="PlayerWeapons" type="Node2D" parent="."]
+script = ExtResource("2_ogu3p")
 
 [node name="FireSpell" type="Area2D" parent="PlayerWeapons"]
 script = ExtResource("2_edmq6")
