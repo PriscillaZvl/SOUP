@@ -31,6 +31,7 @@ _data = {
 radius = 19.0
 
 [node name="bomber" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_pkex4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -41,7 +42,6 @@ shape = SubResource("CircleShape2D_amt3i")
 texture_filter = 1
 texture = ExtResource("1_kgf8y")
 hframes = 12
-frame = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

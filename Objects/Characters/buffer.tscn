@@ -32,6 +32,7 @@ _data = {
 radius = 19.0
 
 [node name="Buffer" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_k6t8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,7 +43,6 @@ shape = SubResource("CircleShape2D_pv81n")
 texture_filter = 1
 texture = ExtResource("2_u2uff")
 hframes = 11
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -50,6 +50,7 @@ libraries = {
 }
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["Entities"]]
+texture_filter = 1
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" groups=["Entities"]]
