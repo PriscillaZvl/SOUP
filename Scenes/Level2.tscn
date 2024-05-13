@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr8o427y1t6kg"]
+[gd_scene load_steps=19 format=3 uid="uid://cr8o427y1t6kg"]
 
 [ext_resource type="Texture2D" uid="uid://ougtmn8mdn6n" path="res://Artwork/obstacles-and-objects.png" id="1_v4ys4"]
 [ext_resource type="Texture2D" uid="uid://du26frina87q0" path="res://Artwork/tileset_arranged.png" id="2_xcfkn"]
 [ext_resource type="PackedScene" uid="uid://djwvyv1ocqll5" path="res://Objects/Characters/player.tscn" id="3_4m0k2"]
 [ext_resource type="PackedScene" uid="uid://b2bqb48g4lvrc" path="res://Objects/Characters/zerger.tscn" id="4_kt3ci"]
 [ext_resource type="PackedScene" uid="uid://d3ev2djd58xci" path="res://Objects/Characters/bomber.tscn" id="5_tyvuw"]
-[ext_resource type="Script" path="res://Objects/Characters/bomber.gd" id="6_2d6mk"]
 [ext_resource type="PackedScene" uid="uid://bi7tr8sa7gqdi" path="res://Objects/Characters/buffer.tscn" id="7_yeu7u"]
 [ext_resource type="PackedScene" uid="uid://dpsp5ou2ke50" path="res://Objects/Characters/caster.tscn" id="8_et25s"]
 [ext_resource type="PackedScene" uid="uid://bqe46ve2nsu3l" path="res://Objects/Characters/sniper.tscn" id="9_y0qhv"]
@@ -351,8 +350,7 @@ position = Vector2(1240, 306)
 position = Vector2(739, 392)
 
 [node name="bomber" parent="." instance=ExtResource("5_tyvuw")]
-position = Vector2(776, 223)
-script = ExtResource("6_2d6mk")
+position = Vector2(726, 300)
 
 [node name="Buffer" parent="." instance=ExtResource("7_yeu7u")]
 position = Vector2(805, 51)
