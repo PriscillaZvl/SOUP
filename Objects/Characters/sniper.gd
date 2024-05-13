@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var speed = 30 # Speed of the enemy
-var health = 50 # Health of the enemy
+var speed = 25 # Speed of the enemy
+var health = 35 # Health of the enemy
 
 func _ready():
 	add_to_group("Entities")
-	$AnimationPlayer.play("buffer_walk")
+	$AnimationPlayer.play("sniper_walk")
 	$Hurtbox.connect("area_entered", Callable(self, "_on_Hurtbox_area_entered"))
 
 func _physics_process(delta):
