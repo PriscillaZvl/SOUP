@@ -6,9 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gtf4"]
 radius = 31.0644
 
-[sub_resource type="Animation" id="Animation_17hw0"]
+[sub_resource type="Animation" id="Animation_yeq0m"]
 resource_name = "sniper_walk"
-length = 0.8
+length = 1.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -17,15 +17,15 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n1g8h"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_058ne"]
 _data = {
-"sniper_walk": SubResource("Animation_17hw0")
+"sniper_walk": SubResource("Animation_yeq0m")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0i4jh"]
@@ -37,7 +37,7 @@ script = ExtResource("1_up3cc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(1, 25)
+position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_4gtf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -45,10 +45,11 @@ texture_filter = 1
 texture = ExtResource("1_anwgt")
 hframes = 17
 vframes = 7
+frame = 41
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_n1g8h")
+"": SubResource("AnimationLibrary_058ne")
 }
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["Entities"]]
@@ -56,5 +57,6 @@ texture_filter = 1
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" groups=["Entities"]]
-position = Vector2(1, 24)
+texture_filter = 1
+position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_0i4jh")
