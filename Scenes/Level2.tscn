@@ -349,10 +349,10 @@ position = Vector2(1240, 306)
 [node name="Zerger" parent="." instance=ExtResource("4_kt3ci")]
 position = Vector2(739, 392)
 
-[node name="bomber" parent="." instance=ExtResource("5_tyvuw")]
+[node name="bomber" parent="." groups=["Entities"] instance=ExtResource("5_tyvuw")]
 position = Vector2(726, 300)
 
-[node name="Buffer" parent="." instance=ExtResource("7_yeu7u")]
+[node name="Buffer" parent="." groups=["Entities"] instance=ExtResource("7_yeu7u")]
 position = Vector2(805, 51)
 
 [node name="Caster" parent="." instance=ExtResource("8_et25s")]
