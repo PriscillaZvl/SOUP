@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://djwvyv1ocqll5"]
+[gd_scene load_steps=21 format=3 uid="uid://djwvyv1ocqll5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerControls.cs" id="1_faxeh"]
 [ext_resource type="Script" path="res://Scripts/Weapons/WeaponScale.gd" id="2_edmq6"]
 [ext_resource type="Texture2D" uid="uid://c5q6qmy8htvaj" path="res://Artwork/NightBorne.png" id="2_h2rm7"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerWeapons.gd" id="3_7lh02"]
 [ext_resource type="Script" path="res://Scripts/Weapons/WeaponRepeat.gd" id="3_hbuck"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerStats.cs" id="3_jry8k"]
 [ext_resource type="Script" path="res://Scripts/Weapons/FireSpell/FireDamage.gd" id="4_8h2dc"]
@@ -103,6 +104,7 @@ position_smoothing_speed = 100.0
 shape = SubResource("RectangleShape2D_gjs2j")
 
 [node name="PlayerWeapons" type="Node2D" parent="."]
+script = ExtResource("3_7lh02")
 
 [node name="FireSpell" type="Area2D" parent="PlayerWeapons"]
 script = ExtResource("2_edmq6")
