@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccnwro1sd7ubo"]
+[gd_scene load_steps=8 format=3 uid="uid://ccnwro1sd7ubo"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_hd8xe"]
 [ext_resource type="Texture2D" uid="uid://dka0ic5ifsq6m" path="res://hudArt/Temporary_Main_Menu_BackGround.png" id="2_h7hb4"]
 [ext_resource type="PackedScene" uid="uid://cdtg11amkkdht" path="res://OptionsMenu/options_menu.tscn" id="3_45a7g"]
+[ext_resource type="PackedScene" uid="uid://bjy2vsol6ka6h" path="res://SelectLevelMenu/select_level_menu.tscn" id="4_sk5mt"]
 
 [sub_resource type="SystemFont" id="SystemFont_aaecy"]
 font_names = PackedStringArray("Impact")
 
 [sub_resource type="SystemFont" id="SystemFont_dupkq"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_enqn0"]
 font_names = PackedStringArray("Impact")
 
 [node name="Main_Menu" type="Control"]
@@ -85,6 +89,13 @@ theme_override_fonts/font = SubResource("SystemFont_dupkq")
 theme_override_font_sizes/font_size = 35
 text = "Start Game"
 
+[node name="Select_Level_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_enqn0")
+theme_override_font_sizes/font_size = 35
+text = "Select Level"
+
 [node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(170, 50)
 layout_mode = 2
@@ -100,5 +111,9 @@ theme_override_font_sizes/font_size = 35
 text = "Exit Game"
 
 [node name="Options_Menu" parent="." instance=ExtResource("3_45a7g")]
+visible = false
+layout_mode = 1
+
+[node name="Select_Level_Menu" parent="." instance=ExtResource("4_sk5mt")]
 visible = false
 layout_mode = 1
